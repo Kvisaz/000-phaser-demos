@@ -1,6 +1,9 @@
-import {createAnimationSprite} from '../../utils';
-import {phaserConfig} from '../../config';
+import {createAnimationSprite, onClick} from '../../utils';
+import {PhysicCollision} from '../PhysicColiision';
 
+/**
+ * Physic Move good for instant moving
+ */
 export class PhysicMove extends Phaser.Scene {
     create(){
         const sprite = createAnimationSprite(this);
@@ -22,6 +25,8 @@ export class PhysicMove extends Phaser.Scene {
         spriteBody.setBounce(1, 1).setCollideWorldBounds(true);
 
         this.physics.world.setBounds(0, 0, 960, 640);
+
+        onClick(sprite, ()=>this.scene.start(PhysicCollision.name))
 
     }
 }

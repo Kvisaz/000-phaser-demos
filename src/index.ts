@@ -4,10 +4,9 @@ import {
   AnimationScene,
   HelloWorld,
   AnimationMovingScene,
-  SpriteScene,
+  SpriteScene, PhysicMove, PhysicCollision,
 } from "./scenes";
 import { phaserConfig } from "./config";
-import {PhysicMove} from './scenes/PhysicMove';
 
 /**
  *  Phaser entry point - like
@@ -29,5 +28,6 @@ const game = new Phaser.Game({
     new AnimationScene(AnimationScene.name),
     new AnimationMovingScene(AnimationMovingScene.name),
     new PhysicMove(PhysicMove.name),
+    new PhysicCollision(PhysicCollision.name),
   ],
 });

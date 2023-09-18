@@ -39,3 +39,10 @@ export function createAnimationSprite(scene:Phaser.Scene): Phaser.GameObjects.Sp
 
     return sprite;
 }
+
+/**
+ * add update if you dont have direct access to scene.update
+ */
+export function onSceneUpdate(gameObject: Phaser.GameObjects.Sprite, callback: (time: number, delta:number)=>void){
+    gameObject.scene.events.on(Phaser.Scenes.Events.UPDATE, callback);
+}

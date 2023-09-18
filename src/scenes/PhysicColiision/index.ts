@@ -1,4 +1,6 @@
 import {createAnimationSprite} from '../../utils';
+import {AnimationMovingScene} from '../AnimationMoving';
+import {HelloWorld} from '../HelloWorld';
 
 export class PhysicCollision extends Phaser.Scene {
     create(){
@@ -27,6 +29,15 @@ export class PhysicCollision extends Phaser.Scene {
         }
 
         this.physics.add.collider(bigKnight, littleKnights);
+
+
+
+        /**
+         * common SCENE click - like click on canvas
+         */
+        this.input.on(Phaser.Input.Events.POINTER_DOWN, ()=>{
+            this.scene.start(HelloWorld.name)
+        });
     }
 }
 

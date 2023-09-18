@@ -1,4 +1,7 @@
 import {SpriteScene} from '../Sprite';
+import {onClick} from '../../utils';
+import {AnimationMovingScene} from '../AnimationMoving';
+import {PhysicMove} from '../PhysicMove';
 
 export class HelloWorld extends Phaser.Scene {
 
@@ -28,6 +31,14 @@ export class HelloWorld extends Phaser.Scene {
         });
         text.setInteractive({
             cursor: 'pointer'
-        })
+        });
+
+
+        /**
+         * common SCENE click - like click on canvas
+         */
+        this.input.on(Phaser.Input.Events.POINTER_DOWN, ()=>{
+            this.scene.start(SpriteScene.name)
+        });
     }
 }

@@ -28,5 +28,13 @@ export class SpriteScene extends Phaser.Scene {
         sprite.setInteractive({
             cursor: 'pointer',
         })
+
+
+        /**
+         * common SCENE click - like click on canvas
+         */
+        this.input.on(Phaser.Input.Events.POINTER_DOWN, ()=>{
+            this.scene.start(AnimationScene.name)
+        });
     }
 }

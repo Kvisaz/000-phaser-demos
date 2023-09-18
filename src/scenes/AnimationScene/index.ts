@@ -42,8 +42,16 @@ export class AnimationScene extends Phaser.Scene {
         sprite.play({ key: animationKey, repeat:-1 });
 
         /**
-         * i use shortcut utility
+         * i use shortcut utility for routing to next scene
          */
-        onClick(sprite, ()=> this.scene.start(AnimationMovingScene.name))
+        onClick(sprite, ()=> this.scene.start(AnimationMovingScene.name));
+
+
+        /**
+         * common SCENE click - like click on canvas
+         */
+        this.input.on(Phaser.Input.Events.POINTER_DOWN, ()=>{
+            this.scene.start(AnimationMovingScene.name)
+        });
     }
 }

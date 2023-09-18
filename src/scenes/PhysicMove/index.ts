@@ -1,5 +1,6 @@
 import {createAnimationSprite, onClick} from '../../utils';
 import {PhysicCollision} from '../PhysicColiision';
+import {AnimationMovingScene} from '../AnimationMoving';
 
 /**
  * Physic Move good for instant moving
@@ -26,7 +27,12 @@ export class PhysicMove extends Phaser.Scene {
 
         this.physics.world.setBounds(0, 0, 960, 640);
 
-        onClick(sprite, ()=>this.scene.start(PhysicCollision.name))
+        /**
+         * common SCENE click - like click on canvas
+         */
+        this.input.on(Phaser.Input.Events.POINTER_DOWN, ()=>{
+            this.scene.start(PhysicCollision.name)
+        });
 
     }
 }

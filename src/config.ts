@@ -1,6 +1,6 @@
 
 /***************************
- * Phaser Config
+ * Phaser Config Scale Sample
  ****************************/
 const scaleConfig: Phaser.Types.Core.ScaleConfig = {
   mode: Phaser.Scale.FIT,
@@ -12,10 +12,28 @@ const scaleConfig: Phaser.Types.Core.ScaleConfig = {
 
 export type IPhaserConfig = Phaser.Types.Core.GameConfig;
 
+
+/***************************
+ * Phaser Physics Config Sample
+ ****************************/
+
+const arcadePhysicsConfig = {
+  default: 'arcade',
+  arcade: {
+    debug: true
+  }
+}
+
+/***************************
+ * Phaser Config Sample
+ ****************************/
 export const phaserConfig: IPhaserConfig = {
   type: Phaser.AUTO,
   backgroundColor: 0x222222,
   transparent: true,
   scale: scaleConfig,
   scene: [],
+  physics: {
+    ...arcadePhysicsConfig
+  }
 };

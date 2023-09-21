@@ -24,6 +24,10 @@ const game = new Phaser.Game({
   scene: [
     // first scene run automatically
     new HelloWorld(HelloWorld.name),
+    /**
+     * scene constructor must get uniques string id - 'key' in Phaser
+     * we can use static Function.name for our classes
+      */
     new SpriteScene(SpriteScene.name),
     new AnimationScene(AnimationScene.name),
     new AnimationMovingScene(AnimationMovingScene.name),

@@ -15,8 +15,16 @@ export class SpriteScene extends Phaser.Scene {
     create() {
         /**
          * Sprite will live in this scene only
+         * we can create it through constructor & adding to scene
+         * useful for non-standard classes
          */
-        const sprite = this.add.sprite(300, 300, Assets.images.knightIdle0001);
+        const sprite = new Phaser.GameObjects.Sprite(this, 300, 300, Assets.images.knightIdle0001);
+        this.add.existing(sprite);
+        /**
+         *  OR use scene add helper
+         *  useful for standard classes
+         */
+        // const sprite = this.add.sprite(300, 300, Assets.images.knightIdle0001);
         sprite.setScale(0.5);
 
         /**
